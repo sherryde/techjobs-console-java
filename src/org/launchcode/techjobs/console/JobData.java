@@ -88,6 +88,7 @@ public class JobData {
     }
 
     public static ArrayList<HashMap<String, String>> findByValue(String searchTerm) {
+        // load data, if not already loaded
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
@@ -96,7 +97,6 @@ public class JobData {
             for (String aValue : row.values()) {
                 if (aValue.toLowerCase().contains(searchTerm.toLowerCase())) {
                     jobs.add(row);
-                    break;
                 }
             }
 
